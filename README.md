@@ -1,1 +1,0 @@
-# Beck-Anxiety-Inventory
