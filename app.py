@@ -798,7 +798,8 @@ else:
                                  placeholder="Enter access code",
                                  label_visibility="collapsed")
             if st.button("Enter", use_container_width=True):
-                if code == st.secrets.get("ACCESS_CODE", ""):
+                valid_codes = [c.strip() for c in st.secrets.get("ACCESS_CODE", "").split(",")]
+if code.strip() in valid_codes:
                     st.session_state.access_granted = True
                     st.rerun()
                 else:
